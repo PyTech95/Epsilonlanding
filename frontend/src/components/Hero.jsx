@@ -53,14 +53,20 @@ export default function Hero({ onApply, onCall, onBrochure }) {
           <button
             onClick={onBrochure}
             data-testid="hero-brochure-btn"
-            className="inline-flex items-center gap-2 text-[14px] text-ink/70 hover:text-ink anim-word"
+            className="group inline-flex items-center gap-3 mt-2 pl-2 pr-5 py-2.5 bg-gold/10 border border-gold/40 hover:bg-gold hover:border-gold transition-all anim-word"
             style={{ animationDelay: "1020ms" }}
           >
-            <span className="w-5 h-5 inline-flex items-center justify-center border border-ink/30 rounded-sm text-[10px]">
-              ↓
+            <span className="w-9 h-9 inline-flex items-center justify-center bg-gold text-ink group-hover:bg-ink group-hover:text-gold transition-colors">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 3v14M5 12l7 7 7-7M5 21h14" />
+              </svg>
             </span>
-            Download the full brochure (PDF)
-            <ArrowUpRight size={13} className="opacity-60" />
+            <span className="font-mono text-[12px] uppercase tracking-[0.18em] text-ink font-medium group-hover:text-ink">
+              Download the full brochure
+            </span>
+            <span className="font-mono text-[10px] tracking-widest text-ink/55 group-hover:text-ink/70 border-l border-ink/20 pl-3">
+              PDF · 17 pp
+            </span>
           </button>
 
           <div className="mt-14 grid grid-cols-2 md:grid-cols-4 hair-border">
