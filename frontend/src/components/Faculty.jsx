@@ -2,8 +2,7 @@ export default function Faculty() {
   const lead = {
     name: "Kent Oliver Bhupathi",
     role: "Founder & Lead Instructor · Epsilon Executive Education",
-    image:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=900&q=80",
+    image: "/kent.png",
     paragraphs: [
       "Economist, data science leader and educator with 15+ years across applied research and analytics — spanning marketing sciences, healthcare analytics, supply chain, business intelligence and professional services. He has spent his career at the intersection of economics, statistics, machine learning and decision support, helping organisations turn complex analysis into measurable business action.",
       "He holds a dual degree in Economics and Architecture from UT Austin and a Master's in Applied Econometrics from NYU. Prior teaching appointments include NYU, Columbia University and the Indian School of Public Policy (ISPP), with curriculum across applied statistics, data science, ML, quantitative methods and technical communication.",
