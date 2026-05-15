@@ -26,7 +26,7 @@ export default function Faculty() {
       role: "VP Legal Affairs & Asst. General Counsel, JPMorgan Chase",
       bio:
         "Business attorney with experience across banking, private equity, fund formation and cross-border transactions. Earlier at Winston & Strawn, Simpson Thacher and Bracewell. J.D. from UC Berkeley.",
-      img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&q=80",
+      img: "/philip.jpg",
     },
     {
       name: "Alena Savera",
@@ -34,7 +34,7 @@ export default function Faculty() {
       role: "VP of Development, The NRP Group",
       bio:
         "Real estate development leader based in Dallas–Fort Worth. Originated multi-family projects totalling 2,350+ units. B.Arch from UT Austin. Brings deal structuring and feasibility judgement to the cohort.",
-      img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80",
+      img: "/alena.jpg",
     },
     {
       name: "Mardoqueo Arteaga, Ph.D.",
