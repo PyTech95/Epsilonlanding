@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "@/App.css";
 import { Toaster } from "sonner";
 import Nav from "@/components/Nav";
@@ -32,6 +32,31 @@ function App() {
   const openApply = () => setApplyOpen(true);
   const openCall = () => setCallOpen(true);
   const openBrochure = () => setBrochureOpen(true);
+
+  // Global scroll reveal observer — auto-applies to .display-headline and .num-badge containers
+  useEffect(() => {
+    // Auto-tag major content blocks (except hero) for reveal
+    document
+      .querySelectorAll("section:not(#top) .display-headline, section:not(#top) h3, section:not(#top) [data-reveal]")
+      .forEach((el) => {
+        if (!el.classList.contains("reveal-on-scroll")) el.classList.add("reveal-on-scroll");
+      });
+
+    const els = document.querySelectorAll(".reveal-on-scroll");
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
+    );
+    els.forEach((el) => obs.observe(el));
+    return () => obs.disconnect();
+  });
 
   return (
     <div className="App bg-cream min-h-screen" data-testid="app-root">

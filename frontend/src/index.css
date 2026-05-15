@@ -189,6 +189,34 @@ body {
     animation: fadeUp 0.9s ease forwards;
 }
 
+/* Scroll reveal */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+}
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal-on-scroll,
+    .anim-word,
+    .anim-ken-burns,
+    .anim-float,
+    .anim-draw-in,
+    .anim-shimmer,
+    .marquee-track {
+        animation: none !important;
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
 /* Hero animations */
 @keyframes kenBurns {
     0% { transform: scale(1.06) translate(0, 0); }
