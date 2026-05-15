@@ -42,7 +42,7 @@ export default function Faculty() {
       role: "Marketing Science Strategist, LinkedIn",
       bio:
         "Economist working at the intersection of marketing science, technology and applied research. Earlier at KPMG and Banco Central de Chile. Ph.D. Economics, Fordham.",
-      img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&q=80",
+      img: "/mardoqueo.jpg",
     },
   ];
 
