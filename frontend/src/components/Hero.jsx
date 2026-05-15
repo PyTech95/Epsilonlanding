@@ -9,7 +9,7 @@ export default function Hero({ onApply, onCall, onBrochure }) {
   ];
 
   return (
-    <section id="top" className="relative pt-20 pb-20 md:pt-24 md:pb-28 overflow-hidden" data-testid="hero-section">
+    <section id="top" className="relative pt-20 pb-20 md:pt-24 md:pb-28 overflow-hidden" data-testid="hero-section" aria-labelledby="hero-headline">
       <div className="container-x grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
         <div className="lg:col-span-7">
           <div className="flex items-center gap-3 mb-10 anim-word" style={{ animationDelay: "0ms" }}>
@@ -19,7 +19,7 @@ export default function Hero({ onApply, onCall, onBrochure }) {
             <span className="eyebrow">Professional Certificate · Cohort 01</span>
           </div>
 
-          <h1 className="display-headline text-[44px] sm:text-[60px] lg:text-[78px] text-ink mb-8">
+          <h1 id="hero-headline" className="display-headline text-[44px] sm:text-[60px] lg:text-[78px] text-ink mb-8">
             <span className="anim-word" style={{ animationDelay: "120ms" }}>Applied </span>
             <span className="anim-word serif-italic" style={{ animationDelay: "240ms" }}>AI</span>
             <span className="anim-word" style={{ animationDelay: "360ms" }}> &amp; Machine Learning,</span>

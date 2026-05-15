@@ -1,0 +1,17 @@
+{
+  "short_name": "Epsilon",
+  "name": "Epsilon Executive Education — Applied AI & ML",
+  "description": "A 12-week live executive programme in Applied AI and Machine Learning for decision-makers.",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#0E1525",
+  "background_color": "#FAF6EE"
+}
