@@ -18,7 +18,7 @@ export default function Faculty() {
       role: "Founder, Remarkables Capital & UnnichedHQ",
       bio:
         "A decade across venture capital, private equity and credit, operating between the US, UK and India. Focused on AI, deeptech, life sciences, fintech and defence-adjacent sectors — bringing a capital-strategy lens to the programme.",
-      img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80",
+      img: "/jayprakash.png",
     },
     {
       name: "Philip Wiseman, J.D.",
