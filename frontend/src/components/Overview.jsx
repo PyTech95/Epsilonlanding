@@ -19,8 +19,8 @@ export default function Overview() {
             </h2>
             <div className="aspect-[5/4] overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=900&q=80"
-                alt="Programme overview"
+                src="/overview.png"
+                alt="Working professional learning applied AI"
                 className="w-full h-full object-cover"
               />
             </div>
