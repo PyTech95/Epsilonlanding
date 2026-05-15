@@ -32,45 +32,28 @@ export default function Certificate() {
           </ul>
         </div>
 
-        {/* Certificate mock */}
+        {/* Certificate photo */}
         <div className="lg:col-span-7">
           <div
-            className="aspect-[7/5] bg-cream border border-ink/15 shadow-[0_30px_60px_-30px_rgba(14,21,37,0.25)] p-10 md:p-14 relative overflow-hidden"
+            className="aspect-[7/5] overflow-hidden relative bg-cream-alt shadow-[0_30px_60px_-30px_rgba(14,21,37,0.25)]"
             data-testid="certificate-mock"
           >
-            <div className="absolute top-6 left-6 right-6 bottom-6 border border-gold/30 pointer-events-none" />
-            <div className="relative flex flex-col h-full">
-              <div className="mb-8">
-                <img src="/logo.png" alt="Epsilon Executive Education" className="h-10 w-auto" />
-              </div>
-              <p className="font-mono text-[10px] uppercase tracking-widest text-ink/60 mb-3">
-                This is to certify that
+            <img
+              src="/certificate.png"
+              alt="Graduate holding Epsilon certificate of achievement"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            {/* Gold corner accents */}
+            <div className="absolute top-4 left-4 w-10 h-px bg-gold" />
+            <div className="absolute top-4 left-4 w-px h-10 bg-gold" />
+            <div className="absolute bottom-4 right-4 w-10 h-px bg-gold" />
+            <div className="absolute bottom-4 right-4 w-px h-10 bg-gold" />
+            {/* Subtle caption chip */}
+            <div className="absolute bottom-5 left-5 bg-ink/90 text-cream px-3 py-2 backdrop-blur-sm">
+              <p className="font-mono text-[9px] uppercase tracking-widest text-gold mb-0.5">
+                Certificate of Achievement
               </p>
-              <h3 className="font-serif serif-italic text-[36px] md:text-[44px] text-ink font-light mb-5">
-                Your Name Here
-              </h3>
-              <p className="text-[14px] text-ink/70 mb-1">has successfully completed the</p>
-              <p className="font-mono text-[10px] uppercase tracking-widest text-gold mb-1">
-                Professional Certificate in
-              </p>
-              <p className="font-serif text-[22px] text-ink mb-2 font-light">
-                Applied AI &amp; Machine Learning
-              </p>
-              <p className="text-[12px] font-mono uppercase tracking-widest text-ink/60">
-                Cohort 01 · 2026
-              </p>
-
-              <div className="mt-auto flex items-end justify-between pt-6">
-                <div>
-                  <p className="font-serif text-[34px] text-gold serif-italic leading-none mb-2">ε</p>
-                  <p className="font-mono text-[9px] uppercase tracking-wider text-ink/60">
-                    Founder · K. O. Bhupathi
-                  </p>
-                </div>
-                <div className="w-16 h-16 rounded-full border-2 border-gold/40 flex items-center justify-center">
-                  <span className="font-serif text-[22px] text-gold serif-italic">ε</span>
-                </div>
-              </div>
+              <p className="font-serif text-[13px] text-cream font-light">Cohort 01 · 2026</p>
             </div>
           </div>
         </div>
