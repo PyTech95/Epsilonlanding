@@ -4,14 +4,12 @@ export default function Footer({ onBrochure }) {
       <div className="container-x">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-cream/10">
           <div className="md:col-span-5">
-            <div className="flex items-center gap-2 mb-5">
-              <span className="logo-monogram serif-italic !text-cream">ε</span>
-              <div className="leading-none">
-                <p className="font-serif text-[20px] tracking-[0.18em] text-cream font-light">EPSILON</p>
-                <p className="font-mono text-[8px] tracking-[0.32em] text-cream/60 mt-1">
-                  EXECUTIVE EDUCATION
-                </p>
-              </div>
+            <div className="mb-5">
+              <img
+                src="/logo.png"
+                alt="Epsilon Executive Education"
+                className="h-14 w-auto brightness-0 invert"
+              />
             </div>
             <p className="text-[14px] text-cream/65 leading-[1.7] max-w-[380px]">
               A live executive school for decision-makers in the AI era. Named for the difference

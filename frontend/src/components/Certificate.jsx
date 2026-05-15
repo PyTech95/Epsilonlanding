@@ -40,14 +40,8 @@ export default function Certificate() {
           >
             <div className="absolute top-6 left-6 right-6 bottom-6 border border-gold/30 pointer-events-none" />
             <div className="relative flex flex-col h-full">
-              <div className="flex items-center gap-3 mb-8">
-                <span className="logo-monogram serif-italic">ε</span>
-                <div className="leading-none">
-                  <p className="font-serif text-[14px] tracking-[0.22em] text-ink">EPSILON</p>
-                  <p className="font-mono text-[8px] tracking-[0.32em] text-ink/60 mt-1">
-                    EXECUTIVE EDUCATION
-                  </p>
-                </div>
+              <div className="mb-8">
+                <img src="/logo.png" alt="Epsilon Executive Education" className="h-10 w-auto" />
               </div>
               <p className="font-mono text-[10px] uppercase tracking-widest text-ink/60 mb-3">
                 This is to certify that
