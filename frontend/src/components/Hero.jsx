@@ -1,11 +1,11 @@
 import { ArrowRight, Calendar, Wifi, Clock, IndianRupee, ArrowUpRight } from "lucide-react";
 
-export default function Hero({ onApply, onCall }) {
+export default function Hero({ onApply, onCall, onBrochure }) {
   const stats = [
     { label: "Duration", value: "12 weeks", Icon: Calendar },
     { label: "Format", value: "Live online", Icon: Wifi },
     { label: "Effort", value: "15–20 hrs / wk", Icon: Clock },
-    { label: "Fee", value: "₹1.25 lakh", Icon: IndianRupee },
+    { label: "Fee", value: "₹89,000", Icon: IndianRupee },
   ];
 
   return (
@@ -38,9 +38,9 @@ export default function Hero({ onApply, onCall }) {
             </button>
           </div>
 
-          <a
-            href="#programme"
-            data-testid="hero-brochure-link"
+          <button
+            onClick={onBrochure}
+            data-testid="hero-brochure-btn"
             className="inline-flex items-center gap-2 text-[14px] text-ink/70 hover:text-ink"
           >
             <span className="w-5 h-5 inline-flex items-center justify-center border border-ink/30 rounded-sm text-[10px]">
@@ -48,7 +48,7 @@ export default function Hero({ onApply, onCall }) {
             </span>
             Download the full brochure (PDF)
             <ArrowUpRight size={13} className="opacity-60" />
-          </a>
+          </button>
 
           <div className="mt-14 grid grid-cols-2 md:grid-cols-4 hair-border">
             {stats.map(({ label, value, Icon }, i) => (

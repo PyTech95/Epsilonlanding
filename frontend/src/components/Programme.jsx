@@ -17,7 +17,7 @@ export default function Programme() {
     { Icon: FileCheck, label: "Assessment", value: "Graded submissions, live review & capstone defence" },
     { Icon: ClipboardList, label: "Final output", value: "Executive Decision Dossier + milestone artefacts" },
     { Icon: Award, label: "Credential", value: "Certificate of Completion + performance scorecard" },
-    { Icon: IndianRupee, label: "Programme fee", value: "₹1.25 lakh" },
+    { Icon: IndianRupee, label: "Programme fee", value: "₹89,000" },
     { Icon: Sparkles, label: "Experience", value: "High-touch, feedback-driven, professionally serious" },
   ];
   return (

@@ -1,4 +1,4 @@
-export default function Footer() {
+export default function Footer({ onBrochure }) {
   return (
     <footer className="bg-ink text-cream/80 pt-20 pb-10" data-testid="site-footer">
       <div className="container-x">
@@ -32,13 +32,13 @@ export default function Footer() {
             <ul className="space-y-3 text-[14px]">
               <li><a href="#top" className="hover:text-cream">Cohort 01</a></li>
               <li><a href="#faq" className="hover:text-cream">FAQ</a></li>
-              <li><a href="#" className="hover:text-cream">Brochure</a></li>
+              <li><button onClick={onBrochure} data-testid="footer-brochure-btn" className="hover:text-cream text-left">Brochure</button></li>
             </ul>
           </div>
           <div className="md:col-span-3">
             <p className="eyebrow !text-gold/80 mb-4">Contact</p>
             <ul className="space-y-3 text-[14px]">
-              <li>admissions@epsilon.education</li>
+              <li>admissions@epsilonexec.com</li>
               <li>Mon – Fri · 10 am – 7 pm IST</li>
             </ul>
           </div>

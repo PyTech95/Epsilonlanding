@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 
-export default function FinalCTA({ onApply, onCall }) {
+export default function FinalCTA({ onApply, onCall, onBrochure }) {
   return (
     <section className="bg-ink text-cream py-28 md:py-36" data-testid="final-cta-section">
       <div className="container-x text-center max-w-[900px]">
@@ -24,9 +24,13 @@ export default function FinalCTA({ onApply, onCall }) {
           >
             Schedule a call
           </button>
-          <a href="#" className="text-cream/70 underline underline-offset-4 hover:text-cream px-3 py-[14px]">
+          <button
+            data-testid="final-brochure-btn"
+            onClick={onBrochure}
+            className="text-cream/70 underline underline-offset-4 hover:text-cream px-3 py-[14px]"
+          >
             Download brochure
-          </a>
+          </button>
         </div>
       </div>
     </section>

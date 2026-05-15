@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 
-export default function Nav({ onApply, onCall }) {
+export default function Nav({ onApply, onCall, onBrochure }) {
   const linkClass = "text-[14px] text-ink/80 hover:text-ink transition-colors";
   const links = [
     { label: "Programme", href: "#programme" },

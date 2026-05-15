@@ -70,7 +70,7 @@ export default function Certificate() {
                 <div>
                   <p className="font-serif text-[34px] text-gold serif-italic leading-none mb-2">ε</p>
                   <p className="font-mono text-[9px] uppercase tracking-wider text-ink/60">
-                    Founder · A. Khanna
+                    Founder · K. O. Bhupathi
                   </p>
                 </div>
                 <div className="w-16 h-16 rounded-full border-2 border-gold/40 flex items-center justify-center">

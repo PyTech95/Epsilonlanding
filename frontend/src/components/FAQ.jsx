@@ -20,7 +20,7 @@ export default function FAQ({ onCall }) {
     },
     {
       q: "What is the fee, and are payment plans available?",
-      a: "The programme fee is ₹1.25 lakh. Flexible payment plans and early-cohort options are available — speak with an advisor for current offers.",
+      a: "The programme fee is ₹89,000. Flexible payment plans and early-cohort options are available — speak with an advisor for current offers.",
     },
     {
       q: "What do I receive on completion?",
