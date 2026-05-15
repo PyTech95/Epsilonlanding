@@ -63,7 +63,7 @@ export default function Audience() {
           ))}
         </div>
 
-        <div className="mt-16 aspect-[3/1] overflow-hidden">
+        <div className="mt-16 aspect-[5/2] overflow-hidden">
           <img
             src="/audience.png"
             alt="Professionals collaborating"
