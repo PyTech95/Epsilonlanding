@@ -38,7 +38,7 @@ export default function Capstone() {
             <img
               src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1100&q=80"
               alt="Capstone work"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-top"
             />
           </div>
           <div className="absolute bottom-5 left-5 bg-ink text-cream py-3 px-4">

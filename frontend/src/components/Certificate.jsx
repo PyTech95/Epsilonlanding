@@ -41,7 +41,7 @@ export default function Certificate() {
             <img
               src="/certificate.png"
               alt="Graduate holding Epsilon certificate of achievement"
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover object-top"
             />
             {/* Gold corner accents */}
             <div className="absolute top-4 left-4 w-10 h-px bg-gold" />

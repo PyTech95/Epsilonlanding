@@ -21,7 +21,7 @@ export default function Overview() {
               <img
                 src="/overview.png"
                 alt="Working professional learning applied AI"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
               />
             </div>
           </div>

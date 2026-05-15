@@ -97,7 +97,7 @@ export default function Hero({ onApply, onCall, onBrochure }) {
             <img
               src="/hero.png"
               alt="Working professional learning online"
-              className="absolute inset-0 w-full h-full object-cover anim-ken-burns"
+              className="absolute inset-0 w-full h-full object-cover object-top anim-ken-burns"
             />
             {/* Subtle gold framing accent */}
             <div className="absolute top-4 left-4 w-12 h-px bg-gold" />

@@ -67,7 +67,7 @@ export default function Audience() {
           <img
             src="/audience.png"
             alt="Professionals collaborating"
-            className="w-full h-full object-cover object-[center_35%]"
+            className="w-full h-full object-cover object-top"
           />
         </div>
       </div>

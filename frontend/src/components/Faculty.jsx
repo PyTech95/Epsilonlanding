@@ -57,7 +57,7 @@ export default function Faculty() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-24" data-testid="lead-faculty">
           <div className="lg:col-span-5">
             <div className="aspect-[4/5] overflow-hidden bg-ink-soft">
-              <img src={lead.image} alt={lead.name} className="w-full h-full object-cover" />
+              <img src={lead.image} alt={lead.name} className="w-full h-full object-cover object-top" />
             </div>
             <div className="flex flex-wrap gap-2 mt-5">
               {lead.badges.map((b) => (
@@ -91,7 +91,7 @@ export default function Faculty() {
           {guests.map((g) => (
             <div key={g.name} data-testid={`guest-${g.name.split(' ')[0].toLowerCase()}`}>
               <div className="aspect-[4/5] overflow-hidden mb-5 bg-cream-alt">
-                <img src={g.img} alt={g.name} className="w-full h-full object-cover" />
+                <img src={g.img} alt={g.name} className="w-full h-full object-cover object-top" />
               </div>
               <h4 className="font-serif text-[20px] text-ink font-light leading-tight mb-1">
                 {g.name}
