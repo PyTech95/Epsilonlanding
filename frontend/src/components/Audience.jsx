@@ -65,9 +65,9 @@ export default function Audience() {
 
         <div className="mt-16 aspect-[3/1] overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&q=80"
+            src="/audience.png"
             alt="Professionals collaborating"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-[center_35%]"
           />
         </div>
       </div>
