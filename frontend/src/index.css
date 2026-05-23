@@ -234,6 +234,19 @@ body {
     100% { background-position: 200% 0; }
 }
 
+/* Lift Emergent badge above the sticky banner */
+#emergent-badge {
+    bottom: 76px !important;
+}
+@media (max-width: 640px) {
+    #emergent-badge {
+        bottom: 84px !important;
+        right: 12px !important;
+        transform: scale(0.85);
+        transform-origin: bottom right;
+    }
+}
+
 @keyframes drawIn {
     from { transform: scaleX(0); }
     to { transform: scaleX(1); }
