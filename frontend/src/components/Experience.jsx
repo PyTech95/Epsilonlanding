@@ -4,9 +4,8 @@ export default function Experience() {
     { n: "02", title: "Peer Environment", body: "Learn alongside working professionals from different functions and industries." },
     { n: "03", title: "Applied Learning", body: "Real practice in data science, AI use, workflow design and business decision-making." },
     { n: "04", title: "Capstone Experience", body: "Finish with the Executive Decision Dossier, a live-reviewed capstone built around evidence and AI supervision." },
-    { n: "05", title: "Applied Output", body: "Model Interpretation Memo, AI System Specification, Workflow Prototype and Executive Proof Pack." },
-    { n: "06", title: "Expert Feedback", body: "Graded feedback throughout the programme — designed to sharpen your work, week by week." },
-    { n: "07", title: "What This Builds", body: "Stronger judgement, better AI fluency, and work that proves real professional growth." },
+    { n: "05", title: "Expert Feedback", body: "Graded feedback throughout the programme — designed to sharpen your work, week by week." },
+    { n: "06", title: "What This Builds", body: "Stronger judgement, better AI fluency, and work that proves real professional growth." },
   ];
 
   return (
@@ -24,14 +23,12 @@ export default function Experience() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-ink/10">
-          {items.map((it, idx) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-ink/10">
+          {items.map((it) => (
             <div
               key={it.n}
               data-testid={`experience-item-${it.n}`}
-              className={`bg-cream-alt p-7 hover:bg-cream transition-colors min-h-[200px] flex flex-col justify-between ${
-                idx === 6 ? "lg:col-span-1" : ""
-              }`}
+              className="bg-cream-alt p-7 hover:bg-cream transition-colors min-h-[200px] flex flex-col justify-between"
             >
               <p className="num-badge mb-6">{it.n}</p>
               <div>

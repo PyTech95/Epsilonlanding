@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 
-export default function Capstone() {
+export default function Capstone({ onBrochure }) {
   const skills = ["Data interpretation", "Model & prompt thinking", "Workflow & deployment"];
   return (
     <section id="capstone" className="section bg-cream-alt" data-testid="capstone-section">
@@ -28,16 +28,16 @@ export default function Capstone() {
             ))}
           </div>
 
-          <a href="#" className="link-arrow text-[14px]" data-testid="capstone-sample-link">
-            See sample dossier in brochure <ArrowUpRight size={14} />
-          </a>
+          <button onClick={onBrochure} className="link-arrow text-[14px]" data-testid="capstone-sample-link">
+            See detailed curriculum in brochure <ArrowUpRight size={14} />
+          </button>
         </div>
 
         <div className="lg:col-span-6 relative">
           <div className="aspect-[5/4] overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1100&q=80"
-              alt="Capstone work"
+              src="/experience.png"
+              alt="Capstone work — Executive Decision Dossier"
               className="w-full h-full object-cover object-top"
             />
           </div>

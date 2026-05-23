@@ -23,6 +23,7 @@ import Footer from "@/components/Footer";
 import ApplyDialog from "@/components/ApplyDialog";
 import ScheduleCallDialog from "@/components/ScheduleCallDialog";
 import BrochureDialog from "@/components/BrochureDialog";
+import StickyBanner from "@/components/StickyBanner";
 
 function App() {
   const [applyOpen, setApplyOpen] = useState(false);
@@ -33,9 +34,7 @@ function App() {
   const openCall = () => setCallOpen(true);
   const openBrochure = () => setBrochureOpen(true);
 
-  // Global scroll reveal observer — auto-applies to .display-headline and .num-badge containers
   useEffect(() => {
-    // Auto-tag major content blocks (except hero) for reveal
     document
       .querySelectorAll("section:not(#top) .display-headline, section:not(#top) h3, section:not(#top) [data-reveal]")
       .forEach((el) => {
@@ -59,26 +58,31 @@ function App() {
   });
 
   return (
-    <div className="App bg-cream min-h-screen" data-testid="app-root">
+    <div className="App bg-cream min-h-screen pb-14 md:pb-16" data-testid="app-root">
       <Nav onApply={openApply} onCall={openCall} onBrochure={openBrochure} />
       <Hero onApply={openApply} onCall={openCall} onBrochure={openBrochure} />
       <LogoStrip />
       <Stats />
+      {/* Tools moved up — right above Overview */}
+      <Tools />
       <Overview />
       <Audience />
       <Outcome onApply={openApply} />
       <Programme />
-      <Experience />
       <Curriculum />
-      <Capstone />
-      <Tools />
+      <Capstone onBrochure={openBrochure} />
       <Faculty />
       <Testimonials />
       <FutureRoles />
       <Certificate />
       <FinalCTA onApply={openApply} onCall={openCall} onBrochure={openBrochure} />
+      {/* Epsilon Experience moved to bottom — right above FAQ */}
+      <Experience />
       <FAQ onCall={openCall} />
       <Footer onBrochure={openBrochure} />
+
+      {/* Sticky scrolling banner */}
+      <StickyBanner onApply={openApply} />
 
       <ApplyDialog open={applyOpen} onOpenChange={setApplyOpen} />
       <ScheduleCallDialog open={callOpen} onOpenChange={setCallOpen} />

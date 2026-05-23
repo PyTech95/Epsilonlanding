@@ -78,6 +78,9 @@ class BrochureLeadCreate(BaseModel):
     email: EmailStr
     phone: str
     current_role: Optional[str] = ""
+    job_title: Optional[str] = ""
+    work_experience: Optional[str] = ""
+    city: Optional[str] = ""
 
 
 class BrochureLead(BaseModel):
@@ -87,6 +90,9 @@ class BrochureLead(BaseModel):
     email: EmailStr
     phone: str
     current_role: Optional[str] = ""
+    job_title: Optional[str] = ""
+    work_experience: Optional[str] = ""
+    city: Optional[str] = ""
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 
