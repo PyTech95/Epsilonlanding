@@ -12,14 +12,20 @@ import uuid
 from datetime import datetime, timezone
 import resend
 
-
+# Load environment variables
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
-mongo_url = os.environ['MONGO_URL']
-client = AsyncIOMotorClient(mongo_url)
-db = client[os.environ['DB_NAME']]
+# MongoDB connection
+mongo_url = os.environ.get('MONGO_URL', 'mongodb://localhost:27017')
+if not mongo_url:
+    raise ValueError("MONGO_URL environment variable is not set")
 
+client = AsyncIOMotorClient(mongo_url)
+db_name = os.environ.get('DB_NAME', 'epsilon_db')
+db = client[db_name]
+
+# Email configuration
 RESEND_API_KEY = os.environ.get('RESEND_API_KEY', '').strip()
 SENDER_EMAIL = os.environ.get('SENDER_EMAIL', 'onboarding@resend.dev').strip()
 ADMISSIONS_EMAIL = os.environ.get('ADMISSIONS_EMAIL', '').strip()
@@ -27,7 +33,7 @@ ADMISSIONS_EMAIL = os.environ.get('ADMISSIONS_EMAIL', '').strip()
 if RESEND_API_KEY:
     resend.api_key = RESEND_API_KEY
 
-app = FastAPI()
+app = FastAPI(title="Epsilon Executive Education API", version="1.0.0")
 api_router = APIRouter(prefix="/api")
 logger = logging.getLogger(__name__)
 
@@ -123,7 +129,7 @@ def _email_html(title: str, subtitle: str, rows: List[tuple]) -> str:
       <table width='100%' cellpadding='0' cellspacing='0' style='border-collapse:collapse;'>
         {body_rows}
       </table>
-    </td></tr>
+    <tr></td>
     <tr><td style='padding:18px 32px;background:#F1ECDF;font-family:monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#0E1525;'>
       Sent automatically from epsilonexec.com
     </td></tr>
@@ -143,6 +149,7 @@ async def send_admissions_email(subject: str, html: str) -> None:
             "html": html,
         }
         await asyncio.to_thread(resend.Emails.send, params)
+        logger.info(f"Email sent successfully: {subject}")
     except Exception as exc:
         logger.error("Email send failed: %s", exc)
 
@@ -150,7 +157,19 @@ async def send_admissions_email(subject: str, html: str) -> None:
 # ----- Routes -----
 @api_router.get("/")
 async def root():
-    return {"message": "Epsilon Executive Education API"}
+    return {"message": "Epsilon Executive Education API", "status": "healthy"}
+
+
+@api_router.get("/health")
+async def health_check():
+    """Health check endpoint for Render"""
+    try:
+        # Check database connection
+        await db.command('ping')
+        return {"status": "healthy", "database": "connected"}
+    except Exception as e:
+        logger.error(f"Health check failed: {e}")
+        return {"status": "unhealthy", "database": "disconnected"}
 
 
 @api_router.post("/applications", response_model=Application)
@@ -173,7 +192,7 @@ async def create_application(payload: ApplicationCreate, background: BackgroundT
         ],
     )
     background.add_task(
-        asyncio.run, send_admissions_email(f"New application · {obj.full_name}", html)
+        send_admissions_email, f"New application · {obj.full_name}", html
     )
     return obj
 
@@ -206,7 +225,7 @@ async def create_contact(payload: ContactCreate, background: BackgroundTasks):
         ],
     )
     background.add_task(
-        asyncio.run, send_admissions_email(f"Call request · {obj.full_name}", html)
+        send_admissions_email, f"Call request · {obj.full_name}", html
     )
     return obj
 
@@ -238,7 +257,7 @@ async def create_brochure_lead(payload: BrochureLeadCreate, background: Backgrou
         ],
     )
     background.add_task(
-        asyncio.run, send_admissions_email(f"Brochure download · {obj.full_name}", html)
+        send_admissions_email, f"Brochure download · {obj.full_name}", html
     )
     return obj
 
@@ -252,8 +271,10 @@ async def list_brochure_leads():
     return items
 
 
+# Include router
 app.include_router(api_router)
 
+# CORS middleware
 app.add_middleware(
     CORSMiddleware,
     allow_credentials=True,
@@ -262,6 +283,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Logging configuration
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
@@ -271,3 +293,11 @@ logging.basicConfig(
 @app.on_event("shutdown")
 async def shutdown_db_client():
     client.close()
+    logger.info("MongoDB connection closed")
+
+
+# For running with uvicorn directly
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
