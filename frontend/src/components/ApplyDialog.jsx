@@ -68,7 +68,7 @@ export default function ApplyDialog({ open, onOpenChange }) {
         data-testid="apply-dialog"
       >
         <DialogHeader>
-          <p className="eyebrow !text-gold mb-2">Apply · Cohort 01</p>
+          <p className="eyebrow !text-gold mb-2">Apply · Next Cohort</p>
           <DialogTitle className="font-serif text-[28px] font-light text-ink leading-tight">
             Begin your <span className="serif-italic text-gold">application</span>.
           </DialogTitle>

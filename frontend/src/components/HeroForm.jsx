@@ -1,11 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
 import { toast } from "sonner";
-import { ArrowRight, Loader2, FileDown } from "lucide-react";
+import { ArrowRight, Loader2, FileDown, Sparkles } from "lucide-react";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
-export default function HeroForm() {
+export default function HeroForm({ dark = false }) {
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     full_name: "",
@@ -38,14 +38,7 @@ export default function HeroForm() {
       await axios.post(`${API}/brochure-leads`, form);
       toast.success("Brochure on its way — check your downloads.");
       triggerDownload();
-      setForm({
-        full_name: "",
-        phone: "",
-        email: "",
-        job_title: "",
-        work_experience: "",
-        city: "",
-      });
+      setForm({ full_name: "", phone: "", email: "", job_title: "", work_experience: "", city: "" });
     } catch (err) {
       toast.error(err?.response?.data?.detail?.[0]?.msg || "Something went wrong.");
     } finally {
@@ -54,32 +47,35 @@ export default function HeroForm() {
   };
 
   const inputClass =
-    "w-full h-11 bg-white border border-ink/15 px-3 text-[14px] text-ink placeholder:text-ink/40 focus:outline-none focus:border-gold transition-colors";
+    "w-full h-12 bg-white border border-ink/15 px-4 text-[15px] text-ink placeholder:text-ink/40 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all";
   const labelClass =
-    "font-mono text-[9.5px] uppercase tracking-[0.15em] text-ink/55 mb-1.5 block";
+    "font-mono text-[10px] uppercase tracking-[0.16em] text-ink/65 mb-1.5 block";
 
   return (
     <div
-      className="bg-cream border border-ink/15 shadow-[0_30px_80px_-40px_rgba(14,21,37,0.35)]"
+      className="bg-cream border border-cream/40 shadow-[0_40px_100px_-30px_rgba(0,0,0,0.5)] relative overflow-hidden"
       data-testid="hero-form-card"
     >
-      <div className="bg-ink text-cream px-6 py-5 flex items-center gap-3">
-        <span className="w-10 h-10 rounded-full bg-gold/15 flex items-center justify-center shrink-0">
-          <FileDown size={16} className="text-gold" />
-        </span>
-        <div>
-          <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-gold mb-0.5">
-            Cohort 01 · Limited Seats
+      <div className="absolute top-0 right-0 w-32 h-32 -translate-y-16 translate-x-16 bg-gold/10 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="px-7 pt-7 pb-5 relative">
+        <div className="flex items-center gap-2 mb-3">
+          <Sparkles size={14} className="text-gold" />
+          <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-gold">
+            Limited Seats · Apply Today
           </p>
-          <h3 className="font-serif text-[20px] font-light leading-tight">
-            Get the <span className="serif-italic text-gold">brochure</span>.
-          </h3>
         </div>
+        <h3 className="font-serif text-[28px] md:text-[32px] font-medium leading-[1.1] text-ink">
+          Get the <span className="serif-italic text-gold">brochure</span>
+        </h3>
+        <p className="text-[14px] text-ink/65 mt-2">
+          Curriculum, faculty, fees — instantly to your inbox.
+        </p>
       </div>
 
-      <form onSubmit={submit} className="p-6 space-y-3.5" data-testid="hero-brochure-form">
+      <form onSubmit={submit} className="px-7 pb-7 space-y-4" data-testid="hero-brochure-form">
         <div>
-          <label htmlFor="hf-name" className={labelClass}>Name *</label>
+          <label htmlFor="hf-name" className={labelClass}>Full name *</label>
           <input
             id="hf-name"
             data-testid="hf-name"
@@ -90,7 +86,7 @@ export default function HeroForm() {
           />
         </div>
 
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label htmlFor="hf-phone" className={labelClass}>Phone *</label>
             <input
@@ -128,7 +124,7 @@ export default function HeroForm() {
           />
         </div>
 
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label htmlFor="hf-exp" className={labelClass}>Work experience</label>
             <select
@@ -136,7 +132,13 @@ export default function HeroForm() {
               data-testid="hf-exp"
               value={form.work_experience}
               onChange={set("work_experience")}
-              className={`${inputClass} appearance-none cursor-pointer`}
+              className={`${inputClass} appearance-none cursor-pointer pr-10`}
+              style={{
+                backgroundImage:
+                  "url(\"data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%230E1525' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e\")",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "right 14px center",
+              }}
             >
               <option value="">Select range</option>
               <option value="0-2">0 – 2 years</option>
@@ -163,7 +165,7 @@ export default function HeroForm() {
           type="submit"
           disabled={loading}
           data-testid="hf-submit"
-          className="btn-primary w-full justify-center !py-3.5 mt-2 disabled:opacity-60"
+          className="w-full justify-center inline-flex items-center gap-2 bg-gold hover:bg-ink text-ink hover:text-cream transition-colors !py-4 mt-3 disabled:opacity-60 font-medium text-[15px]"
         >
           {loading ? (
             <>
@@ -176,7 +178,7 @@ export default function HeroForm() {
           )}
         </button>
 
-        <p className="text-[10.5px] text-ink/45 text-center font-mono uppercase tracking-wider pt-1">
+        <p className="text-[11px] text-ink/50 text-center font-mono uppercase tracking-wider pt-1">
           No spam · 17-page PDF
         </p>
       </form>

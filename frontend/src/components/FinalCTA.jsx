@@ -4,7 +4,7 @@ export default function FinalCTA({ onApply, onCall, onBrochure }) {
   return (
     <section className="bg-ink text-cream py-28 md:py-36" data-testid="final-cta-section">
       <div className="container-x text-center max-w-[900px]">
-        <p className="eyebrow !text-gold mb-7">Cohort 01 · Limited seats</p>
+        <p className="eyebrow !text-gold mb-7">Limited seats · Applications open</p>
         <h2 className="display-headline text-[40px] sm:text-[56px] lg:text-[72px] text-cream mb-10">
           Ready to think, build and decide{" "}
           <span className="serif-italic text-gold">in the AI era?</span>
@@ -15,7 +15,7 @@ export default function FinalCTA({ onApply, onCall, onBrochure }) {
         </p>
         <div className="flex flex-wrap items-center justify-center gap-3">
           <button data-testid="final-apply-btn" onClick={onApply} className="btn-primary">
-            Apply for Cohort 01 <ArrowRight size={16} />
+            Apply for the programme <ArrowRight size={16} />
           </button>
           <button
             data-testid="final-call-btn"

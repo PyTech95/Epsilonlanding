@@ -53,7 +53,7 @@ export default function Certificate() {
               <p className="font-mono text-[9px] uppercase tracking-widest text-gold mb-0.5">
                 Certificate of Achievement
               </p>
-              <p className="font-serif text-[13px] text-cream font-light">Cohort 01 · 2026</p>
+              <p className="font-serif text-[13px] text-cream font-light">2026 · Live Programme</p>
             </div>
           </div>
         </div>

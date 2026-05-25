@@ -38,7 +38,7 @@ export default function StickyBanner({ onApply }) {
                 <div key={dup} className="flex items-center gap-6 md:gap-10 shrink-0">
                   <span className="font-mono text-[10.5px] md:text-[11.5px] uppercase tracking-[0.18em] text-cream/90 flex items-center gap-2">
                     <Calendar size={12} className="text-gold" />
-                    Cohort 01 starts · 12-week live programme
+                    Next cohort starting · 12-week live programme
                   </span>
                   <span className="font-mono text-[10.5px] md:text-[11.5px] uppercase tracking-[0.18em] text-gold">
                     Applications closing soon

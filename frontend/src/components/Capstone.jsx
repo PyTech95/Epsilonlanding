@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, BookOpen } from "lucide-react";
 
 export default function Capstone({ onBrochure }) {
   const skills = ["Data interpretation", "Model & prompt thinking", "Workflow & deployment"];
@@ -11,7 +11,7 @@ export default function Capstone({ onBrochure }) {
             The Executive{" "}
             <span className="serif-italic text-gold">Decision Dossier</span>.
           </h2>
-          <p className="text-[17px] leading-[1.75] text-ink/75 mb-10 max-w-[520px]">
+          <p className="text-[17px] leading-[1.75] text-ink/80 mb-10 max-w-[540px]">
             The capstone is where the full programme comes together. Participants frame a real
             business problem, evaluate evidence, design a practical AI-enabled solution and defend
             it live to decision-makers.
@@ -21,15 +21,24 @@ export default function Capstone({ onBrochure }) {
             {skills.map((s) => (
               <span
                 key={s}
-                className="inline-flex items-center gap-2 px-4 py-2 border border-ink/15 text-[13px] text-ink/75 bg-cream/60"
+                className="inline-flex items-center gap-2 px-4 py-2.5 border border-ink/15 text-[14px] text-ink/80 bg-cream/60"
               >
                 <span className="w-1.5 h-1.5 bg-gold rounded-full" /> {s}
               </span>
             ))}
           </div>
 
-          <button onClick={onBrochure} className="link-arrow text-[14px]" data-testid="capstone-sample-link">
-            See detailed curriculum in brochure <ArrowUpRight size={14} />
+          <button
+            onClick={onBrochure}
+            data-testid="capstone-sample-link"
+            className="inline-flex items-center gap-2.5 bg-gold hover:bg-ink text-ink hover:text-cream px-6 py-4 font-medium text-[14.5px] transition-colors group"
+          >
+            <BookOpen size={16} />
+            See detailed curriculum in brochure
+            <ArrowUpRight
+              size={16}
+              className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            />
           </button>
         </div>
 

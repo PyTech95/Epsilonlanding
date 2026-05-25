@@ -16,6 +16,7 @@ import Tools from "@/components/Tools";
 import Faculty from "@/components/Faculty";
 import Testimonials from "@/components/Testimonials";
 import FutureRoles from "@/components/FutureRoles";
+import JobPlacement from "@/components/JobPlacement";
 import Certificate from "@/components/Certificate";
 import FinalCTA from "@/components/FinalCTA";
 import FAQ from "@/components/FAQ";
@@ -24,6 +25,8 @@ import ApplyDialog from "@/components/ApplyDialog";
 import ScheduleCallDialog from "@/components/ScheduleCallDialog";
 import BrochureDialog from "@/components/BrochureDialog";
 import StickyBanner from "@/components/StickyBanner";
+import FloatingActions from "@/components/FloatingActions";
+import TimedPopup from "@/components/TimedPopup";
 
 function App() {
   const [applyOpen, setApplyOpen] = useState(false);
@@ -63,7 +66,6 @@ function App() {
       <Hero onApply={openApply} onCall={openCall} onBrochure={openBrochure} />
       <LogoStrip />
       <Stats />
-      {/* Tools moved up — right above Overview */}
       <Tools />
       <Overview />
       <Audience />
@@ -74,19 +76,20 @@ function App() {
       <Faculty />
       <Testimonials />
       <FutureRoles />
+      <JobPlacement />
       <Certificate />
       <FinalCTA onApply={openApply} onCall={openCall} onBrochure={openBrochure} />
-      {/* Epsilon Experience moved to bottom — right above FAQ */}
       <Experience />
       <FAQ onCall={openCall} />
       <Footer onBrochure={openBrochure} />
 
-      {/* Sticky scrolling banner */}
       <StickyBanner onApply={openApply} />
+      <FloatingActions />
 
       <ApplyDialog open={applyOpen} onOpenChange={setApplyOpen} />
       <ScheduleCallDialog open={callOpen} onOpenChange={setCallOpen} />
       <BrochureDialog open={brochureOpen} onOpenChange={setBrochureOpen} />
+      <TimedPopup />
       <Toaster
         position="bottom-right"
         toastOptions={{

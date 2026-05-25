@@ -1,11 +1,37 @@
+import { Radio, Users, Wrench, Trophy, MessageSquareQuote, Sparkles } from "lucide-react";
+
 export default function Experience() {
   const items = [
-    { n: "01", title: "Live Learning", body: "Live sessions, guided discussion and direct faculty interaction. No pre-recorded shortcuts." },
-    { n: "02", title: "Peer Environment", body: "Learn alongside working professionals from different functions and industries." },
-    { n: "03", title: "Applied Learning", body: "Real practice in data science, AI use, workflow design and business decision-making." },
-    { n: "04", title: "Capstone Experience", body: "Finish with the Executive Decision Dossier, a live-reviewed capstone built around evidence and AI supervision." },
-    { n: "05", title: "Expert Feedback", body: "Graded feedback throughout the programme — designed to sharpen your work, week by week." },
-    { n: "06", title: "What This Builds", body: "Stronger judgement, better AI fluency, and work that proves real professional growth." },
+    {
+      Icon: Radio,
+      title: "Live Learning",
+      body: "Live sessions, guided discussion and direct faculty interaction. No pre-recorded shortcuts.",
+    },
+    {
+      Icon: Users,
+      title: "Peer Environment",
+      body: "Learn alongside working professionals from different functions and industries.",
+    },
+    {
+      Icon: Wrench,
+      title: "Applied Learning",
+      body: "Real practice in data science, AI use, workflow design and business decision-making.",
+    },
+    {
+      Icon: Trophy,
+      title: "Capstone Experience",
+      body: "Finish with the Executive Decision Dossier, a live-reviewed capstone built around evidence and AI supervision.",
+    },
+    {
+      Icon: MessageSquareQuote,
+      title: "Expert Feedback",
+      body: "Graded feedback throughout the programme — designed to sharpen your work, week by week.",
+    },
+    {
+      Icon: Sparkles,
+      title: "What This Builds",
+      body: "Stronger judgement, better AI fluency, and work that proves real professional growth.",
+    },
   ];
 
   return (
@@ -24,19 +50,23 @@ export default function Experience() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-ink/10">
-          {items.map((it) => (
+          {items.map(({ Icon, title, body }, idx) => (
             <div
-              key={it.n}
-              data-testid={`experience-item-${it.n}`}
-              className="bg-cream-alt p-7 hover:bg-cream transition-colors min-h-[200px] flex flex-col justify-between"
+              key={title}
+              data-testid={`experience-item-${idx}`}
+              className="bg-cream-alt p-7 md:p-8 hover:bg-cream transition-colors min-h-[240px] flex flex-col group"
             >
-              <p className="num-badge mb-6">{it.n}</p>
-              <div>
-                <h3 className="font-serif text-[20px] text-ink font-light mb-2 leading-tight">
-                  {it.title}
-                </h3>
-                <p className="text-[13.5px] text-ink/70 leading-[1.55]">{it.body}</p>
+              <div className="w-14 h-14 rounded-full border border-gold/40 flex items-center justify-center mb-6 bg-cream/50 group-hover:bg-gold group-hover:border-gold transition-colors">
+                <Icon
+                  size={22}
+                  strokeWidth={1.5}
+                  className="text-gold group-hover:text-ink transition-colors"
+                />
               </div>
+              <h3 className="font-serif text-[22px] text-ink font-medium mb-3 leading-tight">
+                {title}
+              </h3>
+              <p className="text-[14.5px] text-ink/70 leading-[1.65]">{body}</p>
             </div>
           ))}
         </div>
