@@ -5,9 +5,10 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                serif: ['Fraunces', 'Cormorant Garamond', 'Georgia', 'serif'],
+                serif: ['Cinzel', 'Cormorant Garamond', 'Georgia', 'serif'],
+                editorial: ['Cormorant Garamond', 'Georgia', 'serif'],
                 sans: ['Inter', '-apple-system', 'sans-serif'],
-                mono: ['JetBrains Mono', 'Menlo', 'monospace'],
+                mono: ['Montserrat', 'Inter', 'sans-serif'],
             },
             colors: {
                 cream: '#FAF6EE',
