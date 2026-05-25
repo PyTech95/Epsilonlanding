@@ -4,7 +4,7 @@
   "description": "A 12-week live executive programme in Applied AI and Machine Learning for decision-makers.",
   "icons": [
     {
-      "src": "/logo.png",
+      "src": "/favicon.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "any maskable"
