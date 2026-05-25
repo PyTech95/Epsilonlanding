@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "sonner";
-import { ArrowRight, Loader2, Sparkles } from "lucide-react";
+import { ArrowRight, Loader2, Sparkles, X } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -92,6 +92,15 @@ export default function TimedPopup() {
             className="absolute -top-10 -right-10 w-40 h-40 rounded-full pointer-events-none"
             style={{ background: "radial-gradient(circle, rgba(184,148,90,0.25), transparent 70%)" }}
           />
+          <button
+            type="button"
+            onClick={() => handleClose(false)}
+            data-testid="pop-close"
+            aria-label="Close"
+            className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full border border-cream/25 bg-ink/40 backdrop-blur-sm flex items-center justify-center text-cream/80 hover:text-ink hover:bg-gold hover:border-gold transition-colors"
+          >
+            <X size={16} strokeWidth={2} />
+          </button>
           <div className="flex items-center gap-2 mb-3 relative">
             <Sparkles size={14} className="text-gold" />
             <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-gold">
