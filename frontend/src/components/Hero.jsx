@@ -12,7 +12,7 @@ export default function Hero({ onApply, onCall, onBrochure }) {
   return (
     <section
       id="top"
-      className="relative pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden bg-ink text-cream"
+      className="relative pt-10 pb-14 sm:pt-14 sm:pb-18 md:pt-20 md:pb-24 overflow-hidden bg-ink text-cream"
       data-testid="hero-section"
       aria-labelledby="hero-headline"
     >
@@ -55,7 +55,7 @@ export default function Hero({ onApply, onCall, onBrochure }) {
 
           <h1
             id="hero-headline"
-            className="display-headline text-[42px] sm:text-[56px] lg:text-[72px] text-cream mb-7"
+            className="display-headline text-[34px] sm:text-[48px] lg:text-[64px] xl:text-[72px] text-cream mb-6 sm:mb-7"
           >
             <span className="anim-word" style={{ animationDelay: "120ms" }}>Applied </span>
             <span className="anim-word serif-italic text-gold" style={{ animationDelay: "240ms" }}>AI</span>

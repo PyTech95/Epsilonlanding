@@ -91,9 +91,28 @@ body {
 .display-headline {
     font-family: 'Cinzel', Georgia, serif;
     font-weight: 500;
-    line-height: 1.08;
-    letter-spacing: 0.005em;
+    line-height: 1.1;
+    letter-spacing: 0;
     text-transform: none;
+    word-spacing: -0.05em;
+    hyphens: auto;
+    overflow-wrap: break-word;
+}
+
+@media (max-width: 640px) {
+    .display-headline {
+        letter-spacing: -0.005em;
+        word-spacing: -0.08em;
+        font-size: 28px !important;
+        line-height: 1.12 !important;
+    }
+}
+
+@media (min-width: 641px) and (max-width: 1023px) {
+    .display-headline {
+        font-size: 36px !important;
+        line-height: 1.1 !important;
+    }
 }
 
 .serif-italic {
@@ -103,6 +122,25 @@ body {
     letter-spacing: 0;
     text-transform: none;
 }
+
+/* Container & section spacing */
+.container-x {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 18px;
+    padding-right: 18px;
+}
+@media (min-width: 640px) {
+    .container-x { padding-left: 28px; padding-right: 28px; }
+}
+@media (min-width: 1024px) {
+    .container-x { padding-left: 48px; padding-right: 48px; }
+}
+
+.section { padding: 64px 0; }
+@media (min-width: 640px) { .section { padding: 80px 0; } }
+@media (min-width: 1024px) { .section { padding: 120px 0; } }
 
 .gold-text {
     color: var(--gold);
@@ -315,7 +353,7 @@ body {
 .giant-numeral {
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-weight: 300;
-    font-size: clamp(120px, 16vw, 220px);
+    font-size: clamp(72px, 14vw, 200px);
     line-height: 0.9;
     letter-spacing: -0.02em;
     color: #BFB7A6;
@@ -345,12 +383,8 @@ body {
     border-color: var(--ink);
 }
 
-/* Section spacing */
-.section { padding: 96px 0; }
-@media (min-width: 768px) { .section { padding: 128px 0; } }
-
-.container-x { max-width: 1280px; margin-left: auto; margin-right: auto; padding-left: 24px; padding-right: 24px; }
-@media (min-width: 768px) { .container-x { padding-left: 48px; padding-right: 48px; } }
+/* Section spacing - overridden by .section above */
+.container-x-legacy { max-width: 1280px; margin-left: auto; margin-right: auto; padding-left: 24px; padding-right: 24px; }
 
 /* Accordion override */
 [data-state="open"] > .acc-icon { transform: rotate(45deg); }
